@@ -23,6 +23,8 @@
 	    
 	let file = "./wordlist.txt"
 	
+	var amount = 5
+
 	function randomWord(array){
 		return array[Math.floor(Math.random() * wordArray.length)];	
 	}
@@ -36,7 +38,14 @@
 		console.log(wordArray.length);
 		//const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
 		//console.log(randomElement);
-		document.getElementById("demo").innerHTML = randomWord(wordArray).replaceAll(" ") + "-"+randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray);
+
+		var result = randomWord(wordArray)
+
+		for (let i = 1; i < amount; i++) {
+			result += "-" + randomWord(wordArray)
+		}
+
+		document.getElementById("demo").innerHTML = result;
 	 		
 	}
 	
