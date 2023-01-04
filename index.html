@@ -22,7 +22,7 @@
 		let y = await x.text();
 		//document.getElementById("demo").innerHTML = y;
 		
-		wordArray = y.split('\n');
+		wordArray = y.split('\n').replaceAll(" ", "");
 		console.log(wordArray.length);
 		//const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
 		//console.log(randomElement);
