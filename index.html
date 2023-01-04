@@ -16,13 +16,13 @@
 	async function getText(file) {
 		let x = await fetch(file);
 		let y = await x.text();
-		document.getElementById("demo").innerHTML = y;
+		//document.getElementById("demo").innerHTML = y;
 		
 		wordArray = y.split('\n');
 		//console.log(wordArray.length);
 		const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
 		console.log(randomElement);
-		document.getElementById("demo2").innerHTML = randomElement + "-" + randomElement + "-" + randomElement + "-" + randomElement + "-" + randomElement;
+		document.getElementById("demo").innerHTML = randomElement + "-" + randomElement + "-" + randomElement + "-" + randomElement + "-" + randomElement;
 		
 	}
 	
