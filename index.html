@@ -16,9 +16,10 @@
 	function randomWord(array){
 		return array[Math.floor(Math.random() * wordArray.length)];	
 	}
+
 	async function getText(file) {
 		let x = await fetch(file);
-		return y = await x.text();
+		let y = await x.text();
 		//document.getElementById("demo").innerHTML = y;
 		
 		wordArray = y.split('\n');
