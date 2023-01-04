@@ -15,18 +15,23 @@
 	
 	async function getText(file) {
 		let x = await fetch(file);
-		let y = await x.text();
+		return y = await x.text();
 		//document.getElementById("demo").innerHTML = y;
 		
-		wordArray = y.split('\n');
+		//wordArray = y.split('\n');
 		//console.log(wordArray.length);
-		const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
-		console.log(randomElement);
-		document.getElementById("demo").innerHTML = randomElement + "-" + randomElement + "-" + randomElement + "-" + randomElement + "-" + randomElement;
-		
+		//const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
+		//console.log(randomElement);
+			
 	}
 	
-	getText(file);
+	function randomWord(array){
+		return array[Math.floor(Math.random() * wordArray.length)];	
+	}
+	
+	wordArrayRaw = getText(file);
+	wordArray = wordArrayRaw.split('\n');
+	document.getElementById("demo").innerHTML = randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray);
 	 	    
     </script>
   </body>
