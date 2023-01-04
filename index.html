@@ -21,9 +21,12 @@
 		let y = await x.text();
 		document.getElementById("demo").innerHTML = y;
 		
-		wordArray = y.split(' ')
+		wordArray = y.split(' ');
+		console.log(wordArray.length);
 		const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
-		document.getElementById("demo2").innerHTML = randomElement;
+		console.log(randomElement);
+		//document.getElementById("demo2").innerHTML = randomElement;
+		
 	}
 	
 	getText(file);
