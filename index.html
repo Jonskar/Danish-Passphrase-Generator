@@ -28,7 +28,6 @@
 
 	function randomWord(array){
 		word = array[Math.floor(Math.random() * wordArray.length)];	
-		word = word.toLowercase();
 		if(!use_æøå){
 			const conditions = ["æ", "ø", "å"];
 			const test = conditions.some(el => word.includes(el));
