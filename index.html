@@ -36,7 +36,7 @@
 		console.log(wordArray.length);
 		//const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
 		//console.log(randomElement);
-		document.getElementById("demo").innerHTML = randomWord(wordArray)+"-"+randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray);
+		document.getElementById("demo").innerHTML = randomWord(wordArray).replaceAll(" ") + "-"+randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray);
 	 		
 	}
 	
