@@ -23,10 +23,19 @@
 	    
 	let file = "./wordlist.txt"
 	
+	use_æøå = true
 	var amount = 5
 
 	function randomWord(array){
-		return array[Math.floor(Math.random() * wordArray.length)];	
+		word = array[Math.floor(Math.random() * wordArray.length)];	
+		word = word.toLowercase();
+		if(!use_æøå){
+			const conditions = ["æ", "ø", "å"];
+			const test = conditions.some(el => word.includes(el));
+			if(test){word="TEST"}
+		}
+
+		return word
 	}
 
 	async function getText(file) {
