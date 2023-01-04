@@ -13,26 +13,22 @@
 	    
 	let file = "./wordlist.txt"
 	
+	function randomWord(array){
+		return array[Math.floor(Math.random() * wordArray.length)];	
+	}
 	async function getText(file) {
 		let x = await fetch(file);
 		return y = await x.text();
 		//document.getElementById("demo").innerHTML = y;
 		
-		//wordArray = y.split('\n');
-		//console.log(wordArray.length);
+		wordArray = y.split('\n');
+		console.log(wordArray.length);
 		//const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
 		//console.log(randomElement);
-			
+		document.getElementById("demo").innerHTML = randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray);
+	 		
 	}
-	
-	function randomWord(array){
-		return array[Math.floor(Math.random() * wordArray.length)];	
-	}
-	
-	wordArrayRaw = getText(file);
-	wordArray = wordArrayRaw.split('\n');
-	document.getElementById("demo").innerHTML = randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray) + "-" + randomWord(wordArray);
-	 	    
+	    
     </script>
   </body>
 </html>
