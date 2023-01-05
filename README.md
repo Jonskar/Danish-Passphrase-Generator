@@ -1,5 +1,5 @@
 # Danish Passphrase Generator
-
+<br>
 <p align="center">
     <img src="/images/favicon.png" />
 </p>
@@ -26,7 +26,8 @@ The wordlist have been altered in the following way:
 
 - Removed words that included numbers
 - Removed words that included blank space
-- Removed words that included any of these special characters: . - ' é / 
+- Removed words that included any of these special characters:  .  -  '  é  /
+- Removed words with less than 4 and more then 10 characters
 - All words made lowercase
 
 The final wordlist has XXXXXX Danish words.
