@@ -106,11 +106,18 @@
 		return word
 	}
 
+	function getRandomIntInclusive(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+	}
+
 	function generatePassphrase(){
 		result = generateWord(wordList)
-
+		var random
 		if(add_number){
-			console.log(Math.random() * (amount - 3) + 3);
+			random = getRandomIntInclusive(1, amount)
+			console.log(random)
 		}
 
 		for (let i = 1; i < amount; i++) {
