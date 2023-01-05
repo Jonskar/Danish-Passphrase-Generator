@@ -38,7 +38,7 @@
 		  <label class="list-group-item d-flex gap-2">
 			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios3" onclick="noUseÆØÅ()">
 			<span>
-			  Brug ikke ÆØÅ
+			  Afvis ÆØÅ
 			</span>
 		  </label>
 		</div>
@@ -124,7 +124,7 @@
 		var randomWordPosition //Random position to add number
 
 		if(add_number){
-			randomWordPosition = getRandomIntInclusive(1, amount)
+			randomWordPosition = getRandomIntInclusive(1, amount-1)
 			console.log(randomWordPosition)
 		}
 
@@ -132,9 +132,9 @@
 			result = capitalize(result)
 		}
 	
-		for (let i = 1; i < amount; i++) {
+		for (let i = 0; i < amount-1; i++) {
 
-			if(add_number&&randomWordPosition-1==i){
+			if(add_number&&randomWordPosition==i){
 				randomNumber = getRandomIntInclusive(0,9)
 				result += randomNumber
 			}
@@ -180,7 +180,7 @@
 	}
 
 	function capitalizeSetting(){
-		add_number = !add_number;
+		capitalize_word = !capitalize_word;
 		generatePassphrase();
 	}
 
