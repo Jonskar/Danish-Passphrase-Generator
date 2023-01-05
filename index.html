@@ -24,14 +24,26 @@
 	let file = "./wordlist.txt"
 	
 	use_æøå = false
+	replace_æøå = true
 	var amount = 5
 
 	function randomWord(array){
 		word = array[Math.floor(Math.random() * wordArray.length)];	
 		if(!use_æøå){
-			const conditions = ["æ", "ø", "å"];
-			const test = conditions.some(el => word.includes(el));
-			if(test){console.log(word)}
+			if(word.includes('æ')){
+				if(replace_æøå){
+					word = word.replace('æ','ae')
+					console.log("replaced æ")
+				}else{
+					// new passphrase
+				}
+			}
+
+		}
+
+			//const conditions = ["æ", "ø", "å"];
+			//const test = conditions.some(el => word.includes(el));
+			//if(test){console.log(word)}
 		}
 
 		return word
