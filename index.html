@@ -36,12 +36,11 @@
 		  <label class="list-group-item d-flex gap-2">
 			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios3" value="">
 			<span>
-			  Brug ikke ord med ÆØÅ
+			  Brug ikke ÆØÅ
 			</span>
 		  </label>
 		</div>
 
-		
 		<div class="list-group mx-0 w-auto">
 			<label class="list-group-item d-flex gap-2">
 			  <input class="form-check-input flex-shrink-0" type="checkbox" value="" disabled checked="">
@@ -64,8 +63,12 @@
 	let file = "./wordlist.txt"
 	
 	use_æøå = false
-	replace_æøå = true
+	replace_æøå = false
 	var amount = 5
+
+	function generateWord(array, use_æøå, replace_æøå){
+		word = array[Math.floor(Math.random() * wordArray.length)];
+	}
 
 	function randomWord(array){
 		word = array[Math.floor(Math.random() * wordArray.length)];	
@@ -80,15 +83,12 @@
 				}else if(word.includes('å')){
 					word = word.replace('å','aa')
 					console.log("replaced å")
+				}
 			}else{
-				// New passphrase
+				randomWord(array)
+				console.log('Found new word')
 			}
-
-			//const conditions = ["æ", "ø", "å"];
-			//const test = conditions.some(el => word.includes(el));
-			//if(test){console.log(word)}
 		}
-
 		return word
 	}
 
