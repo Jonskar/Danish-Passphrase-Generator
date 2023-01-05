@@ -58,7 +58,7 @@
 	</div>
 
 	<div class="px-4 py-5 my-5 text-center">
-		<label for="wordRange" class="form-label">Antal ord</label>
+		<label for="wordRange" class="form-label">Antal ord: <span id="rangeval">?</span></label>
 		<input type="range" class="form-range" min="3" max="20" id="wordRange" onclick="changeWordAmount()">
 	</div>
 
@@ -127,8 +127,8 @@
 	}
 
 	function changeWordAmount(){
-		wordAmount = getElementById('wordRange')
-		console.log(wordAmount)
+		wordAmount = document.getElementById('wordRange').value
+		document.getElementById('rangeval').innerText = wordAmount
 	}
 
 	async function getText(file) {
