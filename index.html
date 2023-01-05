@@ -9,10 +9,10 @@
 </head>
   <body>
 	<div class="px-4 py-5 my-5 text-center">
-		<i class="bi bi-shield-lock d-block mx-auto mb-4"></i>
+		<i class="bi bi-shield-lock d-block mx-auto mb-4" width="50"></i>
 		<h1 class="display-5 fw-bold" id="demo">-</h1>
 		<div class="col-lg-6 mx-auto">
-		  <p class="lead mb-4">Tekst kommer her</p>
+		  <p class="lead mb-4">Dansk Passphrase Generator</p>
 		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
 			<button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="generatePassphrase()"><i class="bi bi-arrow-clockwise"></i> Generer</button>
 			<button type="button" class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-clipboard2"></i> Kopier</button>
@@ -20,22 +20,21 @@
 		</div>
 	</div>
 	<div class="d-flex gap-5 justify-content-center">
-
 		<div class="list-group mx-0 w-auto">
 		  <label class="list-group-item d-flex gap-2">
-			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios1" value="" checked="">
+			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios1" checked="" onclick="useÆØÅ()">
 			<span>
 			  Brug ÆØÅ
 			</span>
 		  </label>
 		  <label class="list-group-item d-flex gap-2">
-			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios2" value="">
+			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios2" onclick="replaceÆØÅ()">
 			<span>
 			  Erstat ÆØÅ
 			</span>
 		  </label>
 		  <label class="list-group-item d-flex gap-2">
-			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios3" value="">
+			<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios3" onclick="noUseÆØÅ()">
 			<span>
 			  Brug ikke ÆØÅ
 			</span>
@@ -44,7 +43,7 @@
 
 		<div class="list-group mx-0 w-auto">
 			<label class="list-group-item d-flex gap-2">
-			  <input class="form-check-input flex-shrink-0" type="checkbox" value="" disabled checked="">
+			  <input class="form-check-input flex-shrink-0" type="checkbox" value="" disabled>
 			  <span>
 				Capitalize
 			  </span>
@@ -55,17 +54,22 @@
 				Inkluder tal
 			  </span>
 			</label>
-		  </div>
+		</div>
+	</div>
 
-	  </div>
+	<div class="px-4 py-5 my-5 text-center">
+		<label for="customRange2" class="form-label">Antal ord</label>
+		<input type="range" class="form-range" min="3" max="20" id="customRange">
+	</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script type="text/javascript">
 	    
 	let file = "./wordlist.txt"
 	var wordList
 
-	dont_use_æøå = true
-	replace_æøå = true
+	var dont_use_æøå = false
+	var replace_æøå = true
 	var amount = 5
 
 	function randomWord(array){
@@ -99,10 +103,27 @@
 
 	function generatePassphrase(){
 		result = generateWord(wordList)
-		for (let i = 1; i < amount; i++) {
-			result += "-" + generateWord(wordList)
+		for (let i = 1; i < wordAmount; i++) {
+			result += "-" + generateWord(amount)
 		}
 		document.getElementById("demo").innerHTML = result;
+	}
+
+	function useÆØÅ(){
+		dont_use_æøå = false
+		generatePassphrase()	
+	}
+
+	function replaceÆØÅ(){
+		dont_use_æøå = true;
+		replace_æøå = true
+		generatePassphrase();
+	}
+
+	function noUseÆØÅ(){
+		dont_use_æøå = true;
+		replace_æøå = false
+		generatePassphrase();
 	}
 
 	async function getText(file) {
@@ -114,6 +135,7 @@
 		console.log(wordList.length);
 		generatePassphrase()	 		
 	}
+
 	
 	getText(file)
 	    
