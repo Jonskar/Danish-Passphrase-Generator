@@ -30,16 +30,17 @@
 	function randomWord(array){
 		word = array[Math.floor(Math.random() * wordArray.length)];	
 		if(!use_æøå){
-			if(word.includes('æ')){
-				if(replace_æøå){
+			if(replace_æøå){
+				if(word.includes('æ')){
 					word = word.replace('æ','ae')
 					console.log("replaced æ")
-				}else{
-					// new passphrase
+				} else if(word.includes('ø')){
+					word = word.replace('ø','oe')
+					console.log("replaced ø")
 				}
+			}else{
+				// New passphrase
 			}
-
-		}
 
 			//const conditions = ["æ", "ø", "å"];
 			//const test = conditions.some(el => word.includes(el));
