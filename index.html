@@ -51,7 +51,7 @@
 			  </span>
 			</label>
 			<label class="list-group-item d-flex gap-2">
-			  <input class="form-check-input flex-shrink-0" type="checkbox" value="" disabled>
+			  <input class="form-check-input flex-shrink-0" type="checkbox" value="" onclick="useNumber()">
 			  <span>
 				Inkluder tal
 			  </span>
@@ -74,7 +74,7 @@
 
 	var dont_use_æøå = false
 	var replace_æøå = true
-	var add_number = true
+	var add_number = false
 	var amount = 5
 
 	function randomWord(array){
@@ -154,6 +154,11 @@
 		document.getElementById('rangeval').innerText = wordAmount
 		amount = wordAmount
 		generatePassphrase()	
+	}
+
+	function useNumber(){
+		add_number = !add_number;
+		generatePassphrase();
 	}
 
 	function copyEvent(){
