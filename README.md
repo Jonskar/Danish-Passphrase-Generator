@@ -1,9 +1,10 @@
 # Danish Passphrase Generator
 
 <p align="center">
-  <img src="/images/favicon.png" />
-
-A passphrase generator for the Danish people!
+    <img src="/images/favicon.png" />
+</p>
+<p align="center">
+    A passphrase generator for the Danish people!
 </p>
 
 ## Getting started
