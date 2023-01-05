@@ -23,7 +23,7 @@
 	    
 	let file = "./wordlist.txt"
 	
-	use_æøå = true
+	use_æøå = false
 	var amount = 5
 
 	function randomWord(array){
@@ -31,7 +31,7 @@
 		if(!use_æøå){
 			const conditions = ["æ", "ø", "å"];
 			const test = conditions.some(el => word.includes(el));
-			if(test){word="TEST"}
+			if(test){console.log(word)}
 		}
 
 		return word
