@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dansk passphrase generator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  </head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+</head>
   <body>
 	<div class="px-4 py-5 my-5 text-center">
-		<img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+		<i class="bi bi-shield-lock d-block mx-auto mb-4"></i>
 		<h1 class="display-5 fw-bold" id="demo">-</h1>
 		<div class="col-lg-6 mx-auto">
 		  <p class="lead mb-4">Tekst kommer her</p>
 		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-			<button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="generatePassphrase()">Generer</button>
-			<button type="button" class="btn btn-outline-secondary btn-lg px-4">Kopier</button>
+			<button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="generatePassphrase()"><i class="bi bi-arrow-clockwise"></i> Generer</button>
+			<button type="button" class="btn btn-outline-secondary btn-lg px-4"><i class="bi bi-clipboard2"></i> Kopier</button>
 		  </div>
 		</div>
 	</div>
@@ -68,7 +69,7 @@
 	var amount = 5
 
 	function randomWord(array){
-		return array[Math.floor(Math.random() * wordArray.length)].trim();
+		return array[Math.floor(Math.random() * wordList.length)].trim();
 	}
 
 	function generateWord(array){
