@@ -45,7 +45,7 @@
 
 		<div class="list-group mx-0 w-auto">
 			<label class="list-group-item d-flex gap-2">
-			  <input class="form-check-input flex-shrink-0" type="checkbox" value="" disabled>
+			  <input class="form-check-input flex-shrink-0" type="checkbox" value="" onclick="capitalizeSetting()">
 			  <span>
 				Stort forbogstav
 			  </span>
@@ -75,7 +75,7 @@
 	var dont_use_æøå = false
 	var replace_æøå = true
 	var add_number = false
-	var capitalize = false
+	var capitalize_word = false
 	var amount = 5
 
 	function randomWord(array){
@@ -113,6 +113,10 @@
 		return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 	}
 
+	function capitalize(word){
+		return word.charAt(0).toUpperCase() + word.slice(1)
+	}
+
 	function generatePassphrase(){
 
 		result = generateWord(wordList)
@@ -124,6 +128,10 @@
 			console.log(randomWordPosition)
 		}
 
+		if(capitalize_word){
+			result = capitalize(result)
+		}
+	
 		for (let i = 1; i < amount; i++) {
 
 			if(add_number&&randomWordPosition-1==i){
@@ -131,8 +139,13 @@
 				result += randomNumber
 			}
 
+			randomWord = generateWord(wordList)
 
-			result += "-" + generateWord(wordList)
+			if(capitalize_word){
+				randomWord = capitalize(randomWord)
+			}
+
+			result += "-" + randomWord
 		}
 		document.getElementById("passphrase").innerHTML = result;
 	}
@@ -162,6 +175,11 @@
 	}
 
 	function useNumber(){
+		add_number = !add_number;
+		generatePassphrase();
+	}
+
+	function capitalizeSetting(){
 		add_number = !add_number;
 		generatePassphrase();
 	}
