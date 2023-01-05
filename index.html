@@ -10,7 +10,7 @@
   <body>
 	<div class="px-4 py-5 my-5 text-center">
 		<i class="bi bi-shield-lock" style="font-size: 5rem;"></i>
-		<h1 class="display-5 fw-bold" id="demo">-</h1>
+		<h1 class="display-5 fw-bold" id="passphrase">-</h1>
 		<div class="col-lg-6 mx-auto">
 		  <p class="lead mb-4">Dansk Passphrase Generator</p>
 		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
@@ -108,7 +108,7 @@
 		for (let i = 1; i < amount; i++) {
 			result += "-" + generateWord(wordList)
 		}
-		document.getElementById("demo").innerHTML = result;
+		document.getElementById("passphrase").innerHTML = result;
 	}
 
 	function useÆØÅ(){
@@ -135,9 +135,8 @@
 		generatePassphrase()	
 	}
 
-	function copyEvent()
-    {
-        var str = document.getElementById('copy');
+	function copyEvent(){
+        var str = document.getElementById('passphrase');
         window.getSelection().selectAllChildren(str);
         document.execCommand("Copy")
     }
@@ -145,7 +144,7 @@
 	async function getText(file) {
 		let x = await fetch(file);
 		let y = await x.text();
-		//document.getElementById("demo").innerHTML = y;
+		//document.getElementById("passphrase").innerHTML = y;
 		
 		wordList = y.split('\n');
 		generatePassphrase()	 		
