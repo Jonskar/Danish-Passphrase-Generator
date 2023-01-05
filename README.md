@@ -1,4 +1,4 @@
-# danish_passphrase_generator
+# Danish Passphrase Generator
 
 ## Getting started
 
@@ -17,10 +17,10 @@ The wordlist have been altered in the following way:
 
 - Removed words that included numbers
 - Removed words that included blank space
-- Removed words that included any of these special characters: - ' é / 
+- Removed words that included any of these special characters: . - ' é / 
 - All words made lowercase
 
-The final wordlist includes XXXXXX Danish words.
+The final wordlist has XXXXXX Danish words.
 
 ## Credits
 
