@@ -61,7 +61,8 @@
     <script type="text/javascript">
 	    
 	let file = "./wordlist.txt"
-	
+	var wordList
+
 	dont_use_æøå = true
 	replace_æøå = true
 	var amount = 5
@@ -95,24 +96,22 @@
 		return word
 	}
 
+	function generatePassphrase(){
+		result = generateWord(wordList)
+		for (let i = 1; i < amount; i++) {
+			result += "-" + generateWord(wordList)
+		}
+		document.getElementById("demo").innerHTML = result;
+	}
+
 	async function getText(file) {
 		let x = await fetch(file);
 		let y = await x.text();
 		//document.getElementById("demo").innerHTML = y;
 		
-		wordArray = y.split('\n');
+		wordList = y.split('\n');
 		console.log(wordArray.length);
-		//const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
-		//console.log(randomElement);
-
-		var result = generateWord(wordArray)
-
-		for (let i = 1; i < amount; i++) {
-			result += "-" + generateWord(wordArray)
-		}
-
-		document.getElementById("demo").innerHTML = result;
-	 		
+		generatePassphrase()	 		
 	}
 	
 	getText(file)
