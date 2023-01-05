@@ -120,7 +120,7 @@
 	function generatePassphrase(){
 
 		var randomWordPosition //Random position to add number
-		var phrase
+		var phrase = ""
 
 		if(add_number){
 			randomWordPosition = getRandomIntInclusive(0, amount-1)
@@ -145,7 +145,8 @@
 			}
 
 			phrase += result
-			if(i<amount){
+
+			if(!i==amount){
 				phrase += "-"
 			}
 		}
