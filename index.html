@@ -74,6 +74,7 @@
 
 	var dont_use_æøå = false
 	var replace_æøå = true
+	var add_number = true
 	var amount = 5
 
 	function randomWord(array){
@@ -107,6 +108,11 @@
 
 	function generatePassphrase(){
 		result = generateWord(wordList)
+
+		if(add_number){
+			console.log(Math.random() * (amount - 3) + 3);
+		}
+
 		for (let i = 1; i < amount; i++) {
 			result += "-" + generateWord(wordList)
 		}
