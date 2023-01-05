@@ -113,14 +113,20 @@
 	}
 
 	function generatePassphrase(){
+
 		result = generateWord(wordList)
-		var random
+
+		var randomWordPosition //Random position to add number
 		if(add_number){
-			random = getRandomIntInclusive(1, amount)
+			randomWordPosition = getRandomIntInclusive(1, amount)
 			console.log(random)
 		}
 
 		for (let i = 1; i < amount; i++) {
+			if(add_number&&randomWordPosition==i){
+				randomNumber = getRandomIntInclusive(0,9)
+				result += randomNumber
+			}
 			result += "-" + generateWord(wordList)
 		}
 		document.getElementById("passphrase").innerHTML = result;
