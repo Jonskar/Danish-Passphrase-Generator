@@ -1,8 +1,8 @@
 # Danish Passphrase Generator
 
-![Danish Passphrase Generator](/repository/images/favicon.png "Danish Passphrase Generator")
+![Danish Passphrase Generator](/images/favicon.png "Danish Passphrase Generator")
 
-A passphrase generator for the Danish people!
+<p align="center">A passphrase generator for the Danish people!</p>
 
 ## Getting started
 
