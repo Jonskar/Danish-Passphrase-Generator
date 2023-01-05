@@ -119,9 +119,8 @@
 
 	function generatePassphrase(){
 
-		result = generateWord(wordList)
-
 		var randomWordPosition //Random position to add number
+		var phrase
 
 		if(add_number){
 			randomWordPosition = getRandomIntInclusive(0, amount-1)
@@ -132,22 +131,25 @@
 			result = capitalize(result)
 		}
 	
-		for (let i = 0; i < amount-1; i++) {
+		for (let i = 0; i < amount; i++) {
+
+			result = generateWord(wordList)
+
+			if(capitalize_word){
+				result = capitalize(result)
+			}
 
 			if(add_number&&randomWordPosition==i){
 				randomNumber = getRandomIntInclusive(0,9)
 				result += randomNumber
 			}
 
-			res = generateWord(wordList)
-
-			if(capitalize_word){
-				res = capitalize(res)
+			phrase += result
+			if(i<amount){
+				phrase += "-"
 			}
-
-			result += "-" + res
 		}
-		document.getElementById("passphrase").innerHTML = result;
+		document.getElementById("passphrase").innerHTML = phrase;
 	}
 
 	function useÆØÅ(){
