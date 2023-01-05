@@ -67,7 +67,8 @@
 	var amount = 5
 
 	function randomWord(array){
-		word = array[Math.floor(Math.random() * wordArray.length)];
+		return array[Math.floor(Math.random() * wordArray.length)];
+
 	}
 
 	function generateWord(array){
@@ -86,7 +87,7 @@
 				}
 			}else{
 				const conditions = ["æ", "ø", "å"];
-				while(conditions.some(el => word.includes(el)){
+				while(conditions.some(el => word.includes(el))){
 					word = randomWord(array)
 				}
 				console.log('Found new word')
