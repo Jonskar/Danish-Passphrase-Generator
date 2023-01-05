@@ -9,10 +9,12 @@
 
 ## Getting started
 
+
+
 ## Features
 
 - Select between 3 and 20 random Danish words
-- Choose if you want Danish special characters (ÆØÅ) or not
+- Option of using Danish characters (ÆØÅ)
 - Option of adding a number to the mix
 - Option of capitalizing the first letter of each word
 
