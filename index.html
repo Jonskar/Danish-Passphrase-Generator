@@ -66,12 +66,12 @@
 	replace_æøå = false
 	var amount = 5
 
-	function generateWord(array, use_æøå, replace_æøå){
+	function randomWord(array){
 		word = array[Math.floor(Math.random() * wordArray.length)];
 	}
 
-	function randomWord(array){
-		word = array[Math.floor(Math.random() * wordArray.length)];	
+	function generateWord(array){
+		word = randomWord(array)
 		if(!use_æøå){
 			if(replace_æøå){
 				if(word.includes('æ')){
@@ -85,7 +85,10 @@
 					console.log("replaced å")
 				}
 			}else{
-				randomWord(array)
+				const conditions = ["æ", "ø", "å"];
+				while(conditions.some(el => word.includes(el))){
+					word = randomWord(array)
+				}
 				console.log('Found new word')
 			}
 		}
@@ -102,10 +105,10 @@
 		//const randomElement = wordArray[Math.floor(Math.random() * wordArray.length)];
 		//console.log(randomElement);
 
-		var result = randomWord(wordArray)
+		var result = generateWord(wordArray)
 
 		for (let i = 1; i < amount; i++) {
-			result += "-" + randomWord(wordArray)
+			result += "-" + generateWord(wordArray)
 		}
 
 		document.getElementById("demo").innerHTML = result;
