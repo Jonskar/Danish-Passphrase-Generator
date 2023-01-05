@@ -139,13 +139,13 @@
 				result += randomNumber
 			}
 
-			randomWord = generateWord(wordList)
+			res = generateWord(wordList)
 
 			if(capitalize_word){
-				randomWord = capitalize(randomWord)
+				res = capitalize(res)
 			}
 
-			result += "-" + randomWord
+			result += "-" + res
 		}
 		document.getElementById("passphrase").innerHTML = result;
 	}
