@@ -15,7 +15,7 @@
 		  <p class="lead mb-4">Dansk Passphrase Generator</p>
 		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
 			<button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="generatePassphrase()"><i class="bi bi-arrow-clockwise"></i> Generer</button>
-			<button type="button" class="btn btn-outline-secondary btn-lg px-4" id="copy""><i class="bi bi-clipboard2" ></i> Kopier</button>
+			<button type="button" class="btn btn-outline-secondary btn-lg px-4" id="copy" onclick="copyEvent()"><i class="bi bi-clipboard2"></i> Kopier</button>
 		  </div>
 		</div>
 	</div>
@@ -139,13 +139,6 @@
         var str = document.getElementById('passphrase').innerHTML;
 		navigator.clipboard.writeText(str)
     }
-
-	const btn_copy = document.getElementById('copy')
-	const txt_data = document.getElementById('passphrase')
-	copy.onclick = () => {
-		const value = txt_data.value
-		navigator.clipboard.writeText(value)
-	}
 
 	async function getText(file) {
 		let x = await fetch(file);
