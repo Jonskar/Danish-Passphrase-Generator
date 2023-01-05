@@ -75,6 +75,7 @@
 	var dont_use_æøå = false
 	var replace_æøå = true
 	var add_number = false
+	var capitalize = false
 	var amount = 5
 
 	function randomWord(array){
@@ -117,16 +118,20 @@
 		result = generateWord(wordList)
 
 		var randomWordPosition //Random position to add number
+
 		if(add_number){
 			randomWordPosition = getRandomIntInclusive(1, amount)
 			console.log(randomWordPosition)
 		}
 
 		for (let i = 1; i < amount; i++) {
-			if(add_number&&randomWordPosition==i){
+
+			if(add_number&&randomWordPosition-1==i){
 				randomNumber = getRandomIntInclusive(0,9)
 				result += randomNumber
 			}
+
+
 			result += "-" + generateWord(wordList)
 		}
 		document.getElementById("passphrase").innerHTML = result;
