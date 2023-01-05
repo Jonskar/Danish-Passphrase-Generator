@@ -103,8 +103,8 @@
 
 	function generatePassphrase(){
 		result = generateWord(wordList)
-		for (let i = 1; i < wordAmount; i++) {
-			result += "-" + generateWord(amount)
+		for (let i = 1; i < amount; i++) {
+			result += "-" + generateWord(wordList)
 		}
 		document.getElementById("demo").innerHTML = result;
 	}
@@ -132,7 +132,6 @@
 		//document.getElementById("demo").innerHTML = y;
 		
 		wordList = y.split('\n');
-		console.log(wordList.length);
 		generatePassphrase()	 		
 	}
 
