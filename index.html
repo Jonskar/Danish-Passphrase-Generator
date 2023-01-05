@@ -62,18 +62,18 @@
 	    
 	let file = "./wordlist.txt"
 	
-	use_æøå = false
+	dont_use_æøå = true
 	replace_æøå = false
 	var amount = 5
 
 	function randomWord(array){
 		return array[Math.floor(Math.random() * wordArray.length)];
-
 	}
 
 	function generateWord(array){
 		word = randomWord(array)
-		if(!use_æøå){
+		const conditions = ["æ", "ø", "å"];
+		if(dont_use_æøå&&conditions.some(el => word.includes(el))){
 			if(replace_æøå){
 				if(word.includes('æ')){
 					word = word.replace('æ','ae')
@@ -86,7 +86,6 @@
 					console.log("replaced å")
 				}
 			}else{
-				const conditions = ["æ", "ø", "å"];
 				while(conditions.some(el => word.includes(el))){
 					word = randomWord(array)
 				}
