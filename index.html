@@ -89,14 +89,10 @@
 		word = randomWord(array)
 		const conditions = ["æ", "ø", "å"];
 		if(dont_use_æøå && conditions.some(el => word.includes(el))){
-			if(replace_æøå){
-				if(word.includes('æ')){
-					word = word.replace('æ','ae')
-				} else if(word.includes('ø')){
-					word = word.replace('ø','oe')
-				}else if(word.includes('å')){
-					word = word.replace('å','aa')
-				}
+			if(replace_æøå){		
+				word = word.replace('æ','ae')
+				word = word.replace('ø','oe')
+				word = word.replace('å','aa')
 			}else{
 				while(conditions.some(el => word.includes(el))){
 					word = randomWord(array)
