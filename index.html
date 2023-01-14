@@ -90,9 +90,9 @@
 		const conditions = ["æ", "ø", "å"];
 		if(dont_use_æøå && conditions.some(el => word.includes(el))){
 			if(replace_æøå){		
-				word = word.replace('æ','ae')
-				word = word.replace('ø','oe')
-				word = word.replace('å','aa')
+				word = word.replace(/æ/g,'ae')
+				word = word.replace(/ø/g,'oe')
+				word = word.replace(/å/g,'aa')
 			}else{
 				while(conditions.some(el => word.includes(el))){
 					word = randomWord(array)
@@ -101,25 +101,6 @@
 		}
 		return word.toLowerCase()
 	}
-
-	// TEST TEST
-	function generateWordTest(){
-		word = "løndør"
-		const conditions = ["æ", "ø", "å"];
-		if(dont_use_æøå && conditions.some(el => word.includes(el))){
-			if(replace_æøå){		
-				word = word.replace('æ','ae')
-				word = word.replace(/ø/g,'oe')
-				word = word.replace('å','aa')
-			}else{
-				while(conditions.some(el => word.includes(el))){
-					word = randomWord(array)
-				}
-			}
-		}
-		console.log(word)
-	}
-
 
 	// Return ransom integer between two numbers, both included
 	function getRandomIntInclusive(min, max) {
@@ -135,7 +116,6 @@
 
 	// Generate full passphrase
 	function generatePassphrase(){
-		generateWordTest() // TEST TEST
 		var randomWordPosition //Random position to add number
 		var phrase = ""
 
