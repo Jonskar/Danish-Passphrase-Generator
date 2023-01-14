@@ -109,7 +109,7 @@
 		if(dont_use_æøå && conditions.some(el => word.includes(el))){
 			if(replace_æøå){		
 				word = word.replace('æ','ae')
-				word = word.replace('ø','oe')
+				word = word.replace(/ø/g,'oe')
 				word = word.replace('å','aa')
 			}else{
 				while(conditions.some(el => word.includes(el))){
