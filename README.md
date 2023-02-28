@@ -30,7 +30,7 @@ The wordlist have been altered in the following way:
 - Removed words with less than 4 and more then 10 characters
 - All words made lowercase
 
-The final wordlist has XXXXXX Danish words.
+The final wordlist has 40771 Danish words.
 
 ## Credits
 
