@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API</title>
+  </head>
+  <body>
+    <div id="passphrase"></div>
+    <script type="text/javascript">
+
+
+      //var urlParams = new URLSearchParams(window.location.search);
+      const searchParams = new URLSearchParams(window.location.search);
+
+      // Iterating the search parameters
+      for (const p of searchParams) {
+        console.log(p);
+      }
+
+      var setting_words = 5
+      var setting_cap = false
+      var setting_number = false
+      var setting_danish = true
+      var error = false
+
+      if (searchParams.has("words")){
+        var words = searchParams.get("words")
+        words = parseInt(words)
+        if (Number.isInteger(words) && words < 21 && words > 2){
+          setting_words = words
+        }else
+          error = true
+      }else{
+        error = true
+      }
+
+      if (searchParams.has("capitalize")){
+        var capitalize = searchParams.get("capitalize")
+        if (capitalize == "true"){
+          setting_cap = true
+        }
+      }
+
+      if (searchParams.has("number")){
+        var number = searchParams.get("number")
+        if (number == "true"){
+          setting_number = true
+        }
+      }
+
+      if (searchParams.has("danish")){
+        var danish = searchParams.get("danish")
+        if (danish == "false"){
+          setting_danish = false
+        }else if (danish == "replace"){
+          setting_danish = "replace"
+        }
+      }
+
+      console.log(setting_danish)
+      console.log("error: "+error);
+
+      if (!error){
+        document.getElementById("passphrase").innerHTML = "yolo";
+      }else{
+        document.getElementById("passphrase").innerHTML = "error";
+      }
+
+    </script>
+  </body>
+</html>
