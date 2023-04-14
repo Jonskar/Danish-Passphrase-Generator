@@ -191,6 +191,9 @@
 	function copyEvent(){
         var str = document.getElementById('passphrase').innerHTML;
 		navigator.clipboard.writeText(str)
+		$("#copy").removeClass('btn-outline-secondary').addClass('btn-success');
+		document.getElementById('copy').innerText = 'Kopiret!'
+
     }
 
 	async function getText(file) {
