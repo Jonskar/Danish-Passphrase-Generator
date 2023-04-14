@@ -188,13 +188,20 @@
 		generatePassphrase();
 	}
 
+	function clearCopyButton(){
+		document.getElementById('copy').classList.remove('btn-success');
+		document.getElementById('copy').classList.add('btn-outline-secondary');
+		document.getElementById('copy').innerText = 'Kopiér'
+	}
+
 	function copyEvent(){
         var str = document.getElementById('passphrase').innerHTML;
 		navigator.clipboard.writeText(str)
 		document.getElementById('copy').classList.remove('btn-outline-secondary');
 		//$("#copy").removeClass('btn-outline-secondary').addClass('btn-success');
 		document.getElementById('copy').classList.add('btn-success');
-		document.getElementById('copy').innerText = 'Kopiret!'
+		document.getElementById('copy').innerText = 'kopieret!'
+		setTimeout(clearCopyButton, 1000);
     }
 
 	async function getText(file) {
