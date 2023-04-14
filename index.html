@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dansk Passphrase Generator</title>
 	<link rel="icon" type="image/svg+xml" href="./res/favicon.svg">
-	<link rel="icon" type="image/png" href="./res/favicon.png">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">-->
-	<link href="./res/bootstrap.min.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="./res/favicon.png"><link href="./res/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./res/bootstrap-icons.css">
 </head>
   <body>
@@ -67,7 +65,6 @@
 		</div>
 	</div>
 
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
     <script src="./res/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 	    
@@ -198,9 +195,8 @@
         var str = document.getElementById('passphrase').innerHTML;
 		navigator.clipboard.writeText(str)
 		document.getElementById('copy').classList.remove('btn-outline-secondary');
-		//$("#copy").removeClass('btn-outline-secondary').addClass('btn-success');
 		document.getElementById('copy').classList.add('btn-success');
-		document.getElementById('copy').innerText = 'kopieret!'
+		document.getElementById('copy').innerText = 'Kopieret!'
 		setTimeout(clearCopyButton, 1000);
     }
 
