@@ -73,9 +73,9 @@
 	<br>
 
 	<div class="container text-center">
-		<div class="row d-flex gap-5 justify-content-center">
+		<div class="row d-flex mx-5 justify-content-center">
 			<div class="col mx-0 w-auto">
-				<i class="bi bi-code"></i> 100% lokalt genereret i din browser
+				<i class="bi bi-code-square"></i> 100% lokalt genereret i din browser
 			</div>
 			<div class="col mx-0 w-auto">
 				<i class="bi bi-github"></i> Open-source og tilgængelig på <a href="https://github.com/Jonskar/Danish-Passphrase-Generator">Github</a>
@@ -212,6 +212,8 @@
 	function clearCopyButton(){
 		document.getElementById('copy').classList.remove('btn-success');
 		document.getElementById('copy').classList.add('btn-outline-secondary');
+		document.getElementById('copyIcon').classList.remove('bi-clipboard2-check');
+		document.getElementById('copyIcon').classList.add('bi-clipboard2');	
 		document.getElementById('copyText').textContent = ' Kopiér'
 	}
 
@@ -220,6 +222,8 @@
 		navigator.clipboard.writeText(str)
 		document.getElementById('copy').classList.remove('btn-outline-secondary');
 		document.getElementById('copy').classList.add('btn-success');
+		document.getElementById('copyIcon').classList.remove('bi-clipboard2');
+		document.getElementById('copyIcon').classList.add('bi-clipboard2-check');		
 		document.getElementById('copyText').textContent = ' Kopieret!'
 		setTimeout(clearCopyButton, 2000);
     }
