@@ -196,8 +196,8 @@
 		navigator.clipboard.writeText(str)
 		document.getElementById('copy').classList.remove('btn-outline-secondary');
 		document.getElementById('copy').classList.add('btn-success');
-		document.getElementById('copy').innerText = 'Kopieret!'
-		setTimeout(clearCopyButton, 1000);
+		document.getElementById('copy').textContent = 'Kopieret!'
+		setTimeout(clearCopyButton, 2000);
     }
 
 	async function getText(file) {
