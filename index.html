@@ -11,7 +11,7 @@
   <body>
 	<div class="px-4 py-5 text-center">
 		<i class="bi bi-shield-lock" style="font-size: 5rem;"></i>
-		<h1 class="display-5 fw-bold text-light" style="overflow-wrap: break-word; font-size: 1.75rem;" onclick="copyEvent()" id="passphrase">-</h1>
+		<h1 class="display-5 fw-bold text-light" style="overflow-wrap: break-word; font-size: 2rem;" onclick="copyEvent()" id="passphrase">-</h1>
 		<div class="col-lg-6 mx-auto">
 		  <p class="lead mb-4">Dansk Passphrase Generator</p>
 		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
@@ -193,13 +193,13 @@
 
 	function changePassphraseFontSize(words){
 		passphrase = document.getElementById('passphrase')
-		size = "1.75rem"
+		size = "2rem"
 		if(words > 6 && words < 10){
-			size = "1.5rem"
+			size = "1.75rem"
 		}else if(words > 9 && words < 16){
-			size = "1.25rem"
+			size = "1.5rem"
 		}else if(words > 15 && words < 21){
-			size = "1rem"
+			size = "1.25rem"
 		}
 		passphrase.style.fontSize = size
 	}
