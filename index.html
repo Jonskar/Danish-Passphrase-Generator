@@ -56,7 +56,7 @@
 			  </span>
 			</label>
 			<label class="list-group-item d-flex gap-2">
-				<input class="form-check-input input-sm" maxlength="1" id="seperator" type="text" value="-" onchange="changeSeperator()">
+				<input class="form-check-input input-sm text-center;" maxlength="1" id="seperator" type="text" value="-" onchange="changeSeperator()">
 				<span>
 				  Seperator
 				</span>
@@ -170,7 +170,7 @@
 	}
 
 	function changeSeperator(){
-		seperator = document.getElementById('seperator').innerText
+		seperator = document.getElementById('seperator').value
 		generatePassphrase();
 	}
 
