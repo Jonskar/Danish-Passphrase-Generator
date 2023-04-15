@@ -16,7 +16,7 @@
 		  <p class="lead mb-4">Dansk Passphrase Generator</p>
 		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
 			<button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="generatePassphrase()"><i class="bi bi-arrow-clockwise"></i> Generér</button>
-			<button type="button" class="btn btn-outline-secondary btn-lg px-4" id="copy" onclick="copyEvent()"><i id="copyIcon" class="bi bi-clipboard2"></i><div id="copyText"> Kopiér</div></button>
+			<button type="button" class="btn btn-outline-secondary btn-lg px-4" id="copy" onclick="copyEvent()"><i id="copyIcon" class="bi bi-clipboard2"></i><span id="copyText"> Kopiér</span></button>
 		  </div>
 		</div>
 	</div>
@@ -82,6 +82,7 @@
 	var add_number = false
 	var capitalize_word = false
 	var amount = 5
+	var seperator = '-'
 
 	// Returns random word from wordlist
 	// Trims before return
@@ -151,7 +152,7 @@
 			phrase += result
 
 			if(i<amount-1){
-				phrase += "-"
+				phrase += seperator
 			}
 		}
 		document.getElementById("passphrase").innerHTML = phrase;
@@ -194,7 +195,7 @@
 	function clearCopyButton(){
 		document.getElementById('copy').classList.remove('btn-success');
 		document.getElementById('copy').classList.add('btn-outline-secondary');
-		document.getElementById('copy').textContent = '<i class="bi bi-clipboard2"></i> Kopiér'
+		document.getElementById('copyText').textContent = ' Kopiér'
 	}
 
 	function copyEvent(){
@@ -202,7 +203,7 @@
 		navigator.clipboard.writeText(str)
 		document.getElementById('copy').classList.remove('btn-outline-secondary');
 		document.getElementById('copy').classList.add('btn-success');
-		document.getElementById('copy').textContent = 'Kopieret!'
+		document.getElementById('copyText').textContent = 'Kopieret!'
 		setTimeout(clearCopyButton, 2000);
     }
 
