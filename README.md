@@ -1,7 +1,7 @@
 # Danish Passphrase Generator
 <br>
 <p align="center">
-    <img src="/images/favicon.png" />
+    <img src="./res/favicon.png" />
 </p>
 <p align="center">
     A passphrase generator for the Danish people!
