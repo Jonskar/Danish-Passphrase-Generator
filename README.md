@@ -22,6 +22,7 @@ Features are inspired by Bitwarden Passphrase Generator.
 - Option of using Danish characters (ÆØÅ)
 - Option of adding a number to the mix
 - Option of capitalizing the first letter of each word
+- Customize the seperator symbol
 
 ## Wordlist
 
