@@ -92,7 +92,8 @@ https://github.com/Jonskar/Danish-Passphrase-Generator
 		</div>
 	</div>
 
-    <script src="./res/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="./res/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="/res/zxcvbn.js"></script>
 	<script type="text/javascript">
 	    
 	let file = "./wordlist.txt"
@@ -176,6 +177,7 @@ https://github.com/Jonskar/Danish-Passphrase-Generator
 				phrase += seperator
 			}
 		}
+		console.log(zxcvbn(phrase))
 		document.getElementById("passphrase").innerHTML = phrase;
 	}
 
@@ -263,5 +265,6 @@ https://github.com/Jonskar/Danish-Passphrase-Generator
 	getText(file)
 	    
     </script>
+	
   </body>
 </html>
