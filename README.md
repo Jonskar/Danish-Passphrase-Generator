@@ -45,4 +45,4 @@ Bootstrap - https://getbootstrap.com/ <br>
 Bitwarden - https://bitwarden.com/password-generator/
 
 ## Licensing
-TBD
+GNU GPLv3
